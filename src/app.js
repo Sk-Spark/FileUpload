@@ -57,7 +57,7 @@ const getUploadedFiles = async () =>{
 const getDownloadFilesHtmlLinks = (files) =>{
     let htmlResp = '<ul>';
     files.forEach((file)=>{
-        htmlResp += `<li> <a href='getFile?file=${file}' > ${file} </a></li>\n`;
+        htmlResp += `<li> <a href='getFile?file=${file}' > ${file} </a></li></br>\n`;
     });
     htmlResp += '</ul>';
     return htmlResp;
@@ -66,7 +66,7 @@ const getDownloadFilesHtmlLinks = (files) =>{
 const getDeleteFilesHtmlLinks = (files) =>{
     let htmlResp = '<ul>';
     files.forEach((file)=>{
-        htmlResp += `<li> ${file} <a href='delete?file=${file}' > [ X ] </a></li>\n`;
+        htmlResp += `<li> ${file} <a href='delete?file=${file}' > [ X ] </a></li></br>\n`;
     });
     htmlResp += '</ul>';
     return htmlResp; 
@@ -107,11 +107,6 @@ app.get('/main.js', (req, res) =>{
     res.sendFile(path.join(__dirname, '/js/main.js'));
 });
 
-// serving QR img
-app.get('/QR.jpg', (req, res) =>{
-    res.sendFile(path.join(__dirname, '/img/QR.jpg'));
-});
-
 // get all ip address
 app.get('/ip', (req, res) =>{
     res.send(results);
@@ -119,12 +114,8 @@ app.get('/ip', (req, res) =>{
 
 // get QR code
 app.get('/qrcode', (req, res) =>{
-    // Access the provided 'page' and 'limt' query parameters
     let index = req.query.i;
     console.log('/qrcode',index);
-    // Generating QR Code
-    // const url = `http://${results[index]}:8383`;
-    // getQRCode(url,index);
     res.sendFile(path.join(__dirname, `/img/${index}.jpg`));
 });
 
