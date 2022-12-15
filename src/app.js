@@ -60,9 +60,14 @@ app.listen(port, () =>
   console.log(`App is listening on port ${port}.`)
 );
 
+app.get('/', (req, res) =>{
+    res.sendFile(path.join(__dirname, '/html/index.html'));
+    // res.send('OK')
+});
+
 // sendFile will go here
 app.get('/upload', function(req, res) {
-    res.sendFile(path.join(__dirname, '/html/index.html'));
+    res.sendFile(path.join(__dirname, '/html/upload.html'));
 });
 
 app.post('/upload', async (req, res) => {
