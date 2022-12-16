@@ -11,10 +11,17 @@ const QRCode = require('qrcode');
 
 const getQRCode = (url,i) =>{    
     const QRCodeFile = path.join(__dirname,"img",`${i}.jpg`);
+    console.log("QR URL:",url);
+    if(String(url).indexOf('192.168') >=0){
+        QRCode.toString(url,{type:'terminal'}, function (err, url) {
+            console.log(url)
+        });
+    }
+
     QRCode.toFile(QRCodeFile,url,(err)=>{
         console.error(err);
     });
-    console.log("QR URL:",url);
+    // console.log("QR URL:",url);
 }
 
 const nets = networkInterfaces();

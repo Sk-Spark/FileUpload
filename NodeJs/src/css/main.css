@@ -17,4 +17,11 @@ a {
     border-radius: 10px;
     text-align: center;
     font-size: 5vw;
+    max-width: 250px;
 }
+
+@media screen and (min-width: 500px) {
+    a {
+       font-size: 30px;
+    }
+  }
