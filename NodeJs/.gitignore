@@ -5,3 +5,6 @@
 
 #uploaded data
 /uploads/*
+
+#dist folder
+/dist
