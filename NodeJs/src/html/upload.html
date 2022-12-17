@@ -1,8 +1,6 @@
 <html>  
   <head>  
     <title>File uploadd</title>  
- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>  
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>  
   <script>  
   $(document).ready(function() {  
      $('#uploadForm').submit(function() {  
@@ -24,13 +22,17 @@
     });      
 });  
   </script>  
+   <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>  
   <body>  
+    <div id="upload-div">
       <h1>File Upload</h1>  
       <form id="uploadForm" enctype="multipart/form-data" action="/upload" method="post">  
        <input type="file" name="myfile" multiple /><br/><br/>  
        <input type="submit" value="Upload Image" name="submit"><br/><br/>  
        <span id="status"></span>  
       </form>  
+    </div>
   </body>  
 </html>  
