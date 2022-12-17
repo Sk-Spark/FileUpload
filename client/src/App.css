@@ -1,0 +1,135 @@
+.App {
+  text-align: center;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (min-width: 500px) {
+  button {
+    font-size: 25px;
+  }
+}
+
+.home-div {
+  display: flex;
+  flex-direction: column;
+}
+
+button  {
+  margin: 5px;
+  line-height: 20px;
+  border: 0px;
+  background-color: #2870dbfb;
+  padding: 10px;
+  color: white;
+  border-radius: 10px;
+  max-width: 200px;
+  width: 40vw;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0958cdfb;
+}
+
+.navbar-div {
+  display: flex;
+  place-self: flex-start;
+}
+
+.navbar-div button {
+  background-color: transparent;
+  color: #0958cdfb;
+  padding: 10px;
+  width: fit-content;
+  border-bottom: 2px solid;
+  border-radius: 0px;
+}
+
+.selected-btn {
+  background-color: #2870dbfb !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+}
+
+.upload-div{
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  justify-content: space-around;
+}
+
+.upload-div label {
+  padding:0px;
+}
+
+.download-div{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 3vw;
+}
+@media screen and (min-width: 500px) {
+  .download-div {
+    font-size: 20px;
+  }
+}
+
+.download-link-div{
+  margin: 3px;
+  padding: 5px;
+}
+
+.download-link-div label{
+  padding: 5px;
+  border: 1px solid #fff;
+  background-color: #169697fb;
+  color: #fff;
+}
+
+.download-link-div .delete-icon,a{
+  color: #fff;
+  padding: 5px;
+  background-color: #279ac7fb;
+  border: 1px solid #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
