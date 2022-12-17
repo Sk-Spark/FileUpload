@@ -62,7 +62,7 @@ const getUploadedFiles = async () =>{
 }
 
 const getDownloadFilesHtmlLinks = (files) =>{
-    let htmlResp = '<ul>';
+    let htmlResp = '<meta name="viewport" content="width=device-width, initial-scale=1"> <ul>';
     files.forEach((file)=>{
         htmlResp += `<li> <a href='getFile?file=${file}' > ${file} </a></li></br>\n`;
     });
@@ -71,7 +71,7 @@ const getDownloadFilesHtmlLinks = (files) =>{
 }
 
 const getDeleteFilesHtmlLinks = (files) =>{
-    let htmlResp = '<ul>';
+    let htmlResp = '<meta name="viewport" content="width=device-width, initial-scale=1"> <ul>';
     files.forEach((file)=>{
         htmlResp += `<li> ${file} <a href='delete?file=${file}' > [ X ] </a></li></br>\n`;
     });
@@ -132,7 +132,7 @@ app.get('/upload', function(req, res) {
 });
 
 app.post('/upload', async (req, res) => {
-    console.log("req",req);
+    // console.log("req",req);
     try {
         if(!req.files) {
             res.send({
@@ -170,13 +170,14 @@ app.post('/upload', async (req, res) => {
                 });
             }
 
-    
-            //return response
-            res.send({
+            console.log({
                 status: true,
                 message: 'Files are uploaded',
                 data: data
             });
+            //return response
+            const pageHeder = '<h2><a href="/"> Home </a></h2> </br> Files are uploaded !! ';
+            res.send(pageHeder);
         }
     } catch (err) {
         console.log(err);
@@ -187,8 +188,9 @@ app.post('/upload', async (req, res) => {
 app.get('/download', async (req, res) =>{
     const uploadedFiles = await getUploadedFiles();
     const htmlResp = getDownloadFilesHtmlLinks(uploadedFiles);
+    const pageHeder = '<h2><a href="/"> Home </a></h2> </br> Files: ';
     console.log("Files: ",uploadedFiles);
-    res.send("Files: " + htmlResp);
+    res.send(pageHeder + htmlResp);
 });
 
 app.get('/getFile', (req, res)=>{
@@ -211,6 +213,7 @@ app.get('/delete', async (req, res) =>{
     }
     const uploadedFiles = await getUploadedFiles();
     const htmlResp = getDeleteFilesHtmlLinks(uploadedFiles);
+    const pageHeder = '<h2><a href="/"> Home </a></h2> </br> Files: ';
     console.log("Files: ",uploadedFiles);
-    res.send("Files: " + htmlResp);
+    res.send(pageHeder + htmlResp);
 });

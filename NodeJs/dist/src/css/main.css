@@ -1,20 +1,33 @@
+#main {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+  margin: auto;
+  max-width: 400px;
+}
 
-#main{
+a {
+  text-decoration: none;
+  background-color: rgba(9, 88, 205, 0.985);
+  color: #fff;
+  padding: 10px;
+  margin: 10px;
+  line-height: 45px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 5vw;
+  max-width: 250px;
+}
+
+@media screen and (min-width: 500px) {
+  a {
+    font-size: 30px;
+  }
+}
+
+/* #upload-div{
     display: flex;
     flex-direction: column;
     width: 50vw;
     margin: auto;
-    max-width: 400px;
-}
-
-a {
-    text-decoration: none;
-    background-color: rgba(9, 88, 205, 0.985);
-    color: #fff;
-    padding: 10px;
-    margin: 10px;
-    line-height: 45px;
-    border-radius: 10px;
-    text-align: center;
-    font-size: 5vw;
-}
+} */
